@@ -120,7 +120,7 @@
 
 
 
-  <title>Resume-JennyLi | Jenny.Li</title>
+  <title>移动端消息发布功能分析 | Jenny.Li</title>
   
 
 
@@ -225,33 +225,198 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/29/qq-weibo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jenny.Li">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jenny.Li">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">Resume-JennyLi</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">移动端消息发布功能分析</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-29T14:39:54+08:00">2018-07-29</time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <pre><code>QQ说说vs新浪微博vs微信朋友圈移动端消息发布功能分析
+</code></pre><p>  体验环境：iphone6p</p>
+<p>QQ（V 7.6.3.466）、微信（V 6.7.1）、新浪微博（V 8.7.1）都具有让个体发布内容的功能，但在产品表现上却不尽相同。本文对内容发布功能，如【发布纯文字消息】和【发布图文消息】进行了梳理对比，简析原因整理如下：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>微博</th>
+<th>微信朋友圈</th>
+<th>QQ说说</th>
+<th>简析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发布路径</td>
+<td>打开微博-下方【+】按钮</td>
+<td>打开微信-发现-朋友圈-右上方相机按钮</td>
+<td>打开QQ-动态-好友动态-右上角【+】按钮</td>
+<td>可以看到微博入口层级最浅，因为微博的核心功能是即时信息的发布与获取，而说说/朋友圈只是QQ/微信下的一个模块</td>
+</tr>
+<tr>
+<td>展示位置</td>
+<td>打开微博</td>
+<td>打开微博-首页-朋友圈</td>
+<td>打开QQ-动态-好友动态</td>
+<td>微博是内容软件，首要展示的是内容；微信、QQ首要展示的是通讯页面</td>
+</tr>
+<tr>
+<td>发布范围</td>
+<td>公开（所有人可见），朋友圈，仅自己可见，指定部分好友可见</td>
+<td>公开（所有人可见），私密，部分可见，不给谁看</td>
+<td>所有人，QQ好友，私密，部分可见，不给谁看</td>
+<td>这一功能设计差别不大</td>
+</tr>
+<tr>
+<td>字体</td>
+<td>仅有默认字体</td>
+<td>仅有默认字体</td>
+<td>除默认字体外，有非常多类型的炫彩字、超大字可选择，但需付费或成为黄钻后使用</td>
+<td>QQ主要付费群体年轻化，更容易被这样表面的与众不同所吸引，进而付费。</td>
+</tr>
+<tr>
+<td>编辑图片</td>
+<td>1，预览后点击下一步/长按图片后编辑。2，可使用贴纸（自带话题属性），滤镜，边框，马赛克，画笔，裁剪，旋转，标签（标签，@，定位）</td>
+<td>1，预览后点击编辑（预览和编辑都在左下方小字体,2，可使用画笔，表情，文字，马赛克，裁剪</td>
+<td>1，选择单张照片可直接点击编辑；选择多张照片预览后点击编辑2，可使用画笔，表情，文字，滤镜，裁剪3，可跳转至第三方天天P图</td>
+<td>微博和动态更倾向让用户表达，微信更注重互动的克制</td>
+</tr>
+<tr>
+<td></td>
+<td>添加图片</td>
+<td>可拍摄/添加本地图片（最多9张）</td>
+<td>可拍摄/添加本地图片（最多9张）</td>
+<td>可拍摄/添加本地图片/精美配图（未提示上限）</td>
+<td>微博和微信更注重内容的展示和质量，QQ的付费群体较为年轻化，更注重的是表达而非倾听</td>
+</tr>
+</tbody>
+</table>
+<h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><p><strong>微博动态</strong>：微博是一个基于用户关系的分享互动，提供微型博客服务类的社交网站；微博的用户群体关系是： 用户之间的关系虚拟大于现实，即：线上好友与线下好友的重合度不高；内容发布后所有使用微博的用户都有权限查看，也可以查看非好友的评论或点赞，并且可以转发。微博功能设计更侧重于内容传播的速度和互动的即时性。</p>
+<p><strong>微信朋友圈</strong>：微信是一款基于网络快速发送语音、文字、视频,支持多人群聊的聊天软件；是基于目前的社交圈互为好友，内容发布后，只有自己的好友可见，也只能看见自己的好友对其他好友内容的评论或者点赞，更加注重隐私，用户间的互动相比QQ更克制；用户群体的年龄分布广，在内容生产上侧重简洁，易上手。</p>
+<p><strong>QQ说说</strong>：QQ空间的用户群体偏年轻化，主要为在校学生，他们的主要特点是喜欢与相对公开的圈子分享好玩有趣的人和事物，主要需求是分享生活、发表观点和与朋友互动。内容生产上更丰富有趣，内容发布后可以看见非好友对好友动态的评论或点赞。</p>
+<h2 id="启发："><a href="#启发：" class="headerlink" title="启发："></a>启发：</h2><p>在设计一个功能的时候，不要因为相似性，而且完全抄袭其他app的相似功能，应该明确自己产品的定位，产业环境，竞争对手，用户群体特征等众多因素，然后找到可存性最好的一个方案，在不断地调整、试错的过程中变成一个具有生命力的产品。</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/28/keep/" rel="next" title="keep原型设计">
+                <i class="fa fa-chevron-left"></i> keep原型设计
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -284,8 +449,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -343,6 +517,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对比"><span class="nav-number">1.</span> <span class="nav-text">对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启发："><span class="nav-number">2.</span> <span class="nav-text">启发：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
