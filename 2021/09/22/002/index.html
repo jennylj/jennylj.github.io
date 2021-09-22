@@ -20,28 +20,49 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jenny.Li">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="数据来源于kaggle，该数据覆盖了某网购平台4年（2015-1-2至2018-12-30）的部分零售数据，对该数据集建立RFM模型，对客户进行细化分类，因为时间比较久远，设置了2019年1月1日作为日期对照值。R(Rencency):最近一次消费，F（Frequency）：消费频率，M（Monetary）：消费金额。 导入相关库，设置绘图的中文字体12345678import datetimei">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用python对某网购平台的销售数据进行分析">
+<meta property="og:url" content="http://example.com/2021/09/22/002/index.html">
 <meta property="og:site_name" content="Jenny.Li">
+<meta property="og:description" content="数据来源于kaggle，该数据覆盖了某网购平台4年（2015-1-2至2018-12-30）的部分零售数据，对该数据集建立RFM模型，对客户进行细化分类，因为时间比较久远，设置了2019年1月1日作为日期对照值。R(Rencency):最近一次消费，F（Frequency）：消费频率，M（Monetary）：消费金额。 导入相关库，设置绘图的中文字体12345678import datetimei">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/09/22/002/001.png">
+<meta property="og:image" content="http://example.com/2021/09/22/002/12.png">
+<meta property="og:image" content="http://example.com/2021/09/22/002/002.png">
+<meta property="og:image" content="http://example.com/2021/09/22/002/pic.gif">
+<meta property="og:image" content="http://example.com/2021/09/22/002/003.png">
+<meta property="og:image" content="http://example.com/2021/09/22/002/004.png">
+<meta property="og:image" content="http://example.com/2021/09/22/002/005.png">
+<meta property="og:image" content="http://example.com/2021/09/22/002/006.png">
+<meta property="og:image" content="http://example.com/2021/09/22/002/007.png">
+<meta property="og:image" content="http://example.com/2021/09/22/002/008.png">
+<meta property="og:image" content="http://example.com/2021/09/22/002/009.png">
+<meta property="og:image" content="http://example.com/2021/09/22/002/11.png">
+<meta property="og:image" content="http://example.com/2021/09/22/002/010.png">
+<meta property="og:image" content="http://example.com/2021/09/22/002/15.png">
+<meta property="og:image" content="http://example.com/2021/09/22/002/13.png">
+<meta property="og:image" content="http://example.com/2021/09/22/002/14.png">
+<meta property="article:published_time" content="2021-09-22T13:42:22.000Z">
+<meta property="article:modified_time" content="2021-09-22T13:56:30.937Z">
 <meta property="article:author" content="Jenny.Li">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/09/22/002/001.png">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/09/22/002/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Jenny.Li</title>
+  <title>用python对某网购平台的销售数据进行分析 | Jenny.Li</title>
   
 
 
@@ -139,9 +160,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -157,10 +179,9 @@
       <meta itemprop="name" content="Jenny.Li">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/22/002/" class="post-title-link" itemprop="url">用python对某网购平台的销售数据进行分析</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          用python对某网购平台的销售数据进行分析
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -184,7 +205,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>数据来源于kaggle，该数据覆盖了某网购平台4年（2015-1-2至2018-12-30）的部分零售数据，对该数据集建立RFM模型，对客户进行细化分类，因为时间比较久远，设置了2019年1月1日作为日期对照值。R(Rencency):最近一次消费，F（Frequency）：消费频率，M（Monetary）：消费金额。</p>
+        <p>数据来源于kaggle，该数据覆盖了某网购平台4年（2015-1-2至2018-12-30）的部分零售数据，对该数据集建立RFM模型，对客户进行细化分类，因为时间比较久远，设置了2019年1月1日作为日期对照值。R(Rencency):最近一次消费，F（Frequency）：消费频率，M（Monetary）：消费金额。</p>
 <h5 id="导入相关库，设置绘图的中文字体"><a href="#导入相关库，设置绘图的中文字体" class="headerlink" title="导入相关库，设置绘图的中文字体"></a>导入相关库，设置绘图的中文字体</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import datetime</span><br><span class="line">import numpy as np</span><br><span class="line">from matplotlib import pyplot as plt</span><br><span class="line">from pyecharts.charts import Map</span><br><span class="line">from matplotlib import pyplot as plt</span><br><span class="line">from pyecharts import options as opts</span><br><span class="line">from pyecharts.globals import ThemeType</span><br><span class="line">plt.rcParams[&#x27;font.sans-serif&#x27;]=[&#x27;SimHei&#x27;]</span><br></pre></td></tr></table></figure>
 
 <h5 id="加载数据集"><a href="#加载数据集" class="headerlink" title="加载数据集"></a>加载数据集</h5><p><em>首先看到数据集的大小一共有9800行，18列，大致包括：订单号，订单日期，客户编号，客户名称，国家，城市，产品类别，产品名称，销售金额等。数据集的邮编列有11个空值，本文不会用到邮编列，暂不做处理。单个订单销售额的平均值是230.77，中位数是54.49，最小金额是0.44，最大金额是22638.48，考虑是销售的产品类别跨度较大。</em></p>
@@ -299,125 +320,30 @@
 <p><img src="/2021/09/22/002/13.png" alt="13"> </p>
 <p><img src="/2021/09/22/002/14.png" alt="14"> </p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/18/001/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jenny.Li">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jenny.Li">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/18/001/" class="post-title-link" itemprop="url">某商户8月短信发送情况分析</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-09-18 21:37:54 / 修改时间：22:54:53" itemprop="dateCreated datePublished" datetime="2021-09-18T21:37:54+08:00">2021-09-18</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>公司某商户要求统计其签名的发送情况，及包含特定内容的短信数量统计，使用request.post 获取该商户整个8月的短信发送情况，共50多万条。</p>
-<h4 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h4><p><strong>导入相关库</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import time</span><br><span class="line">import datetime</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">import os</span><br><span class="line">import pandas as pd</span><br><span class="line">import json</span><br></pre></td></tr></table></figure>
-
-<p><strong>找到相应的cookie，header，url</strong>，<em>cookie是会变化的</em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cookie = &#x27;ASP.NET_SessionId=5j05wibdhiwm5lur5tiiyq2z; .ASPXAUTH=8C8DA9675470DF317C657D7180EEDB3C1F3AA434507EBFEEF8E0D2311FE7F05DDC2A4BC165D4D08413C2E78F65632521139050F4C104C103C588EBEA5BA20180B0FD21574B5984EF6AE4587B71D530BFDF146C2C7826EFAD3E23B879F95532B710563B921A083560ACD33CC6FBC73983FECAF0AEA9815391CBA5C269887B3C442362D27CD9AA41E92CF282B78D1B8A5B2185DE39063EC0256D5B6C793E4B84C4C48EE28F728D25D4CEEB3C5D161E9F7C6BC2F0433DC520572500CDD84E26AE6703B4DACD1E5A764CC9DADDBEC949E05F200F894FBA3C1007C1659CB087341A8D26B2377D0D926470B523CE705650F39CEDF5EEC487FF0A4F0975275FFFA86CF435A25C7614811FE6623FACDC58B934428EC29A658ADD56690A830758CCD35FDCE5F9ED8B5C0ACA50677BCA5E5E4359FD77E23805211164C0629A178E3C9012016A6CF80A317A0080D108E296107178D1EE0F5FF67A23DB626B7000790427A56C2805EC1C15BDBC7D43C13AE9CB07ED5EDEF335C2FF03C1818DCDBCE06F996362E3B8FFDD44CA3CF22BEA2818351DB6E92B059AC1507A9605C165DD1CAF72F771F216A12521524FC239ED0FE271D4D0B79A3E0E201568D74E9516854E4CBF403CF55D7876EF276CCAFEA048D8611D64825A37232687890A2D0594DC03DBC071DEDFA449E50C0186AFBA00157C1BCE84910C367FC8F6271D5F98DE4EF548B26A7D82DC71C7AE06E936DC766EEBA32CF3482509E5A0A9A9F6519D04810EE3F6AFDED3ACD487101F5BEF458205A6A6C2DB4088B522FE0258C736DC48DA89&#x27;</span><br><span class="line">payloaddata = &#123;&quot;limit&quot;: 8, &quot;offset&quot;: 0,</span><br><span class="line">               &quot;model&quot;: &#123;&quot;OrderId&quot;: &quot;&quot;, &quot;BatchNum&quot;: &quot;&quot;, &quot;MerchId&quot;: &quot;200056&quot;, &quot;MerchUserId&quot;: &quot;-1&quot;, &quot;MerOrderNo&quot;: &quot;&quot;,</span><br><span class="line">                         &quot;MsgTemplateId&quot;: &quot;&quot;, &quot;PhoneNum&quot;: &quot;&quot;, &quot;OrderSource&quot;: &quot;0&quot;, &quot;Operators&quot;: &quot;-1&quot;,</span><br><span class="line">                         &quot;ProductType&quot;: &quot;0&quot;, &quot;OrderStatus&quot;: &quot;8&quot;, &quot;NotifySuccess&quot;: &quot;-1&quot;, &quot;ProvinceId&quot;: &quot;-1&quot;,</span><br><span class="line">                         &quot;CityId&quot;: &quot;-1&quot;, &quot;TimeType&quot;: &quot;1&quot;, &quot;TagId&quot;: &quot;0&quot;, &quot;StartTime&quot;: &quot;2021-08-01 00:00:00&quot;,</span><br><span class="line">                         &quot;EndTime&quot;: &quot;2021-08-07 23:59:59&quot;, &quot;MsgSignature&quot;: &quot;&quot;&#125;&#125;</span><br><span class="line">header = &#123;</span><br><span class="line">    &#x27;User-Agent&#x27;: &#x27;Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36&#x27;,</span><br><span class="line">    &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,</span><br><span class="line">    &#x27;Cookie&#x27;: cookie</span><br><span class="line">&#125;</span><br><span class="line">posturl = &#x27;这里填你的url&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><strong>请求数据，页面跳转url没有变化，通过payloaddata里的offset来翻页：limit1000,offset0,是第一页，limit1000,offset1000是第二页。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">def write_fo_file(rows):</span><br><span class="line">    f = open(&#x27;E:\lgww.csv&#x27;, &#x27;a&#x27;)</span><br><span class="line">    for row in rows:</span><br><span class="line">        f.write(f&#x27;&#123;row[&quot;PhoneNum&quot;]&#125;| &#123;row[&quot;AddTime&quot;]&#125;| &#123;row[&quot;MsgSignature&quot;]&#125;| &#123;row[&quot;SendContent&quot;]&#125;| &#123;row[&quot;Quantity&quot;]&#125;\n&#x27;)</span><br><span class="line">    f.closed</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    start_time = datetime.datetime(2021, 8, 1, 0, 0, 0)</span><br><span class="line">    end_time = datetime.datetime(2021, 8, 31, 23, 59, 59)</span><br><span class="line">    next_time = start_time + datetime.timedelta(days=7) - datetime.timedelta(seconds=1)</span><br><span class="line"></span><br><span class="line">    while next_time &lt;= end_time:</span><br><span class="line">        payloaddata[&quot;model&quot;][&quot;StartTime&quot;] = start_time.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)</span><br><span class="line">        payloaddata[&quot;model&quot;][&quot;EndTime&quot;] = next_time.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)</span><br><span class="line"></span><br><span class="line">        print(&quot;start: &#123;&#125;, end: &#123;&#125;&quot;.format(payloaddata[&quot;model&quot;][&quot;StartTime&quot;], payloaddata[&quot;model&quot;][&quot;EndTime&quot;]))</span><br><span class="line"></span><br><span class="line">        offset = 0</span><br><span class="line">        limit = 1000</span><br><span class="line"></span><br><span class="line">        while True:</span><br><span class="line">            payloaddata[&quot;limit&quot;] = limit</span><br><span class="line">            payloaddata[&quot;offset&quot;] = offset</span><br><span class="line">            r = requests.post(posturl, headers=header, data=json.dumps(payloaddata), verify=False)</span><br><span class="line">            data = r.json()</span><br><span class="line">            total = data[&quot;total&quot;]</span><br><span class="line">            offset += len(data[&quot;rows&quot;])</span><br><span class="line">            print(&quot;offset: &#123;&#125;, limit:&#123;&#125; total:&#123;&#125;&quot;.format(offset, limit, total))</span><br><span class="line"></span><br><span class="line">            write_fo_file(data[&quot;rows&quot;])</span><br><span class="line"></span><br><span class="line">            time.sleep(1)</span><br><span class="line">            if offset &gt;= total:</span><br><span class="line">                break</span><br><span class="line"></span><br><span class="line">        if next_time == end_time:</span><br><span class="line">            break</span><br><span class="line">        start_time = next_time + datetime.timedelta(seconds=1)</span><br><span class="line">        next_time = start_time + datetime.timedelta(days=7) - datetime.timedelta(seconds=1)</span><br><span class="line">        if next_time &gt; end_time:</span><br><span class="line">            next_time = end_time</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="分析数据"><a href="#分析数据" class="headerlink" title="分析数据"></a>分析数据</h4><p><strong>数据处理：导入数据，加列名，提取天和小时，给手机号脱敏</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">from matplotlib import pyplot as plt</span><br><span class="line">from wordcloud import WordCloud,STOPWORDS</span><br><span class="line">import jieba</span><br><span class="line">df=pd.read_csv(&#x27;E:\\lgww.csv&#x27;,sep=&#x27;|&#x27;,header=None)</span><br><span class="line">#pd.set_option(&#x27;display.max_columns&#x27;,None)</span><br><span class="line">df.columns=[&#x27;num&#x27;,&#x27;date&#x27;,&#x27;id&#x27;,&#x27;content&#x27;,&#x27;quantity&#x27;]</span><br><span class="line">df[&#x27;num&#x27;]=df[&#x27;num&#x27;].astype(&#x27;string&#x27;)</span><br><span class="line">df[&#x27;num&#x27;] = df[&#x27;num&#x27;].str.slice_replace(8, 12, &#x27;*&#x27; * 4)</span><br><span class="line">df[&#x27;day&#x27;]=df[&#x27;date&#x27;].apply(lambda x:x[0:11])</span><br><span class="line">df[&#x27;date&#x27;]=pd.to_datetime(df[&#x27;date&#x27;])</span><br><span class="line">df[&#x27;hourr&#x27;]=df[&#x27;date&#x27;].dt.hour</span><br><span class="line">print(df.head())</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/09/18/001/005.png" alt="导入数据的前五行"></p>
-<p><strong>设置中文字体</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.rcParams[&#x27;font.sans-serif&#x27;]=[&#x27;simhei&#x27;]</span><br></pre></td></tr></table></figure>
-
-<p><strong>24小时发送量</strong></p>
-<p>   该商户每天上午10点是发送高峰期，其次是下午的6点和7点，晚上11点至凌晨8点几乎不发送，避免打扰到用户。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">plt.style.use(&#x27;ggplot&#x27;)</span><br><span class="line">dh=df.groupby([&#x27;hourr&#x27;]).count()</span><br><span class="line">dh.reset_index(inplace=True)</span><br><span class="line">plt.bar(dh[&#x27;hourr&#x27;],dh[&#x27;id&#x27;],edgecolor=&#x27;k&#x27;,linewidth=1,label=&#x27;发送时刻分布&#x27;)</span><br><span class="line">plt.legend()</span><br><span class="line">for a,b in zip(dh[&#x27;hourr&#x27;],dh[&#x27;id&#x27;]):</span><br><span class="line">    plt.text(a,b,b,ha=&#x27;center&#x27;,va=&#x27;bottom&#x27;,rotation=90)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-<img src="/2021/09/18/001/003.png" class="" title="24小时发送量">
+        
 
 
-<p><strong>8月每天的发送量</strong></p>
-<p>该商户8月每天的发送量基本在4万条以下，27号发送量激增，考虑是临近月底，政府加大了力度宣传疫苗接种。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">dc=df.groupby([&#x27;day&#x27;]).count()</span><br><span class="line">dc.reset_index(inplace=True)</span><br><span class="line">plt.figure(figsize=(14,9))</span><br><span class="line">plt.title(&#x27;8月短信发送量&#x27;,fontsize=18)</span><br><span class="line">plt.plot(dc[&#x27;day&#x27;],dc[&#x27;id&#x27;],color=&#x27;#99ff99&#x27;,label=&#x27;日发送量&#x27;)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.ylabel(&#x27;发送量&#x27;)</span><br><span class="line">plt.xticks(rotation=60)</span><br><span class="line">for a,b in zip(dc[&#x27;day&#x27;],dc[&#x27;id&#x27;]):</span><br><span class="line">    plt.text(a,b,b,ha=&#x27;center&#x27;,va=&#x27;bottom&#x27;,rotation=90)</span><br><span class="line">plt.savefig(&#x27;E:\\day.png&#x27;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-<img src="/2021/09/18/001/002.png" class="" title="8月发送量">
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(dc.describe())</span><br></pre></td></tr></table></figure>
-
-<p>可以看到，8月的平均每天发送量是：17751，中位数是：12964，最小发送量是89，最大发送量是：141554；</p>
-<img src="/2021/09/18/001/006.png" class="" title="8月的平均">
-
-<p><strong>发送量前五的签名</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">dc1=df.groupby([&#x27;id&#x27;]).count().sort_values(&#x27;content&#x27;,ascending=False).head(5)</span><br><span class="line">dc1.reset_index(inplace=True)</span><br><span class="line">colors = [&#x27;#ff9999&#x27;,&#x27;#66b3ff&#x27;,&#x27;#99ff99&#x27;,&#x27;#ffcc99&#x27;,&#x27;#55B4B0&#x27;]</span><br><span class="line">plt.title(&#x27;发送量前五的签名&#x27;)</span><br><span class="line">plt.pie(dc1[&#x27;content&#x27;], colors = colors, labels=dc1[&#x27;id&#x27;],autopct=&quot;%0.2f%%&quot;,startangle=30)</span><br><span class="line">centre_circle = plt.Circle((0,0),0.80,fc=&#x27;white&#x27;)</span><br><span class="line">fig = plt.gcf()</span><br><span class="line">fig.gca().add_artist(centre_circle)</span><br><span class="line">plt.savefig(&#x27;E:\\id.png&#x27;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-<img src="/2021/09/18/001/001.png" class="" title="发送量前五的签名">
-
-<h4 id="短信内容词云展示"><a href="#短信内容词云展示" class="headerlink" title="短信内容词云展示"></a>短信内容词云展示</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">wordlist=df[&#x27;content&#x27;].tolist()</span><br><span class="line">def gg(ml):</span><br><span class="line">    li=[&#x27;&#x27;.join(jieba.cut(sentence))for sentence in ml]</span><br><span class="line">    new_text=&#x27;&#x27;.join(li)</span><br><span class="line">    w=WordCloud(background_color=&#x27;white&#x27;,font_path=r&#x27;C:\Windows\Fonts\simsun.ttc&#x27;).generate(new_text)</span><br><span class="line">    plt.imshow(w)</span><br><span class="line">    plt.axis(&#x27;off&#x27;)</span><br><span class="line">    plt.show()</span><br><span class="line">gg(wordlist)</span><br></pre></td></tr></table></figure>
-
-<img src="/2021/09/18/001/004.png" class="" title="短信内容词云展示">
-
-<h4 id="存储数据"><a href="#存储数据" class="headerlink" title="存储数据"></a>存储数据</h4><p><strong>将该商户8月的数据存储到mysql</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">import pymysql</span><br><span class="line">df=pd.read_csv(&#x27;E:\\lgww.csv&#x27;,sep=&#x27;|&#x27;,header=None)</span><br><span class="line">row_num=df.shape[0]</span><br><span class="line">con=pymysql.connect(host=&#x27;localhost&#x27;,user=&#x27;root&#x27;,password=&#x27;******&#x27;,charset=&#x27;utf8&#x27;,port=3306)</span><br><span class="line">cursor=con.cursor()</span><br><span class="line">try:</span><br><span class="line">    cursor.execute(&#x27;use lj;&#x27;)</span><br><span class="line">    cursor.execute(&#x27;drop table if exists hdb;&#x27;)</span><br><span class="line">    sql1 = &quot;create table hdb(phonenum char(11),date datetime,msgid varchar(20),content varchar(200));&quot;</span><br><span class="line">    cursor.execute(sql1)</span><br><span class="line">    for i in range(row_num):</span><br><span class="line">        sql=&#x27;insert into hdb(phonenum,date,msgid,content)values (%s,%s,%s,%s)&#x27;</span><br><span class="line">        cursor.execute(sql,(df.iloc[i,:][0],df.iloc[i,:][1],df.iloc[i,:][2],df.iloc[i,:][3]))</span><br><span class="line">        con.commit()</span><br><span class="line">finally:</span><br><span class="line">    con.close()</span><br></pre></td></tr></table></figure>
-
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/18/001/" rel="prev" title="某商户8月短信发送情况分析">
+      <i class="fa fa-chevron-left"></i> 某商户8月短信发送情况分析
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -470,6 +396,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3%E5%BA%93%EF%BC%8C%E8%AE%BE%E7%BD%AE%E7%BB%98%E5%9B%BE%E7%9A%84%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93"><span class="nav-number">1.</span> <span class="nav-text">导入相关库，设置绘图的中文字体</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">2.</span> <span class="nav-text">加载数据集</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%A4%84%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">数据类型处理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B6%88%E8%B4%B9%E9%A1%BE%E5%AE%A2%E7%9A%84%E5%9C%B0%E5%8C%BA%E5%88%86%E5%B8%83%EF%BC%882015-2019%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">消费顾客的地区分布（2015-2019）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9E%84%E9%80%A0RFM%E9%80%8F%E8%A7%86%E8%A1%A8"><span class="nav-number">5.</span> <span class="nav-text">构造RFM透视表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">6.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9E%84%E9%80%A0RFM%E6%A2%AF%E5%BA%A6%E7%AD%96%E7%95%A5"><span class="nav-number">7.</span> <span class="nav-text">构造RFM梯度策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E5%88%86%E7%B1%BB%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="nav-number">8.</span> <span class="nav-text">客户分类可视化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E6%B7%B1%E8%80%95%E5%AE%A2%E6%88%B7%E5%88%86%E6%9E%90"><span class="nav-number">9.</span> <span class="nav-text">重要深耕客户分析</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
