@@ -23,23 +23,23 @@
   <meta name="description" content="公司某商户要求统计其签名的发送情况，及包含特定内容的短信数量统计，使用request.post 获取该商户整个8月的短信发送情况，共50多万条。 获取数据导入相关库 1234567import requestsimport timeimport datetimefrom bs4 import BeautifulSoupimport osimport pandas as pdimport json">
 <meta property="og:type" content="article">
 <meta property="og:title" content="某商户8月短信发送情况分析">
-<meta property="og:url" content="http://example.com/2021/09/18/001/index.html">
+<meta property="og:url" content="http://example.com/2021/09/18/011/index.html">
 <meta property="og:site_name" content="Jenny.Li">
 <meta property="og:description" content="公司某商户要求统计其签名的发送情况，及包含特定内容的短信数量统计，使用request.post 获取该商户整个8月的短信发送情况，共50多万条。 获取数据导入相关库 1234567import requestsimport timeimport datetimefrom bs4 import BeautifulSoupimport osimport pandas as pdimport json">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/09/18/001/005.png">
-<meta property="og:image" content="http://example.com/2021/09/18/001/003.png">
-<meta property="og:image" content="http://example.com/2021/09/18/001/002.png">
-<meta property="og:image" content="http://example.com/2021/09/18/001/006.png">
-<meta property="og:image" content="http://example.com/2021/09/18/001/001.png">
-<meta property="og:image" content="http://example.com/2021/09/18/001/004.png">
+<meta property="og:image" content="http://example.com/2021/09/18/011/005.png">
+<meta property="og:image" content="http://example.com/2021/09/18/011/003.png">
+<meta property="og:image" content="http://example.com/2021/09/18/011/002.png">
+<meta property="og:image" content="http://example.com/2021/09/18/011/006.png">
+<meta property="og:image" content="http://example.com/2021/09/18/011/001.png">
+<meta property="og:image" content="http://example.com/2021/09/18/011/004.png">
 <meta property="article:published_time" content="2021-09-18T13:37:54.000Z">
-<meta property="article:modified_time" content="2021-09-25T13:10:25.718Z">
+<meta property="article:modified_time" content="2021-09-28T13:21:26.800Z">
 <meta property="article:author" content="Jenny.Li">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/09/18/001/005.png">
+<meta name="twitter:image" content="http://example.com/2021/09/18/011/005.png">
 
-<link rel="canonical" href="http://example.com/2021/09/18/001/">
+<link rel="canonical" href="http://example.com/2021/09/18/011/">
 
 
 <script id="page-configurations">
@@ -157,7 +157,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/18/001/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/18/011/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -187,7 +187,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-25 21:10:25" itemprop="dateModified" datetime="2021-09-25T21:10:25+08:00">2021-09-25</time>
+                <time title="修改时间：2021-09-28 21:21:26" itemprop="dateModified" datetime="2021-09-28T21:21:26+08:00">2021-09-28</time>
               </span>
 
           
@@ -215,7 +215,7 @@
 
 <h4 id="分析数据"><a href="#分析数据" class="headerlink" title="分析数据"></a>分析数据</h4><p><strong>数据处理：导入数据，加列名，提取天和小时，给手机号脱敏</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">from matplotlib import pyplot as plt</span><br><span class="line">from wordcloud import WordCloud,STOPWORDS</span><br><span class="line">import jieba</span><br><span class="line">df=pd.read_csv(&#x27;E:\\lgww.csv&#x27;,sep=&#x27;|&#x27;,header=None)</span><br><span class="line">#pd.set_option(&#x27;display.max_columns&#x27;,None)</span><br><span class="line">df.columns=[&#x27;num&#x27;,&#x27;date&#x27;,&#x27;id&#x27;,&#x27;content&#x27;,&#x27;quantity&#x27;]</span><br><span class="line">df[&#x27;num&#x27;]=df[&#x27;num&#x27;].astype(&#x27;string&#x27;)</span><br><span class="line">df[&#x27;num&#x27;] = df[&#x27;num&#x27;].str.slice_replace(8, 12, &#x27;*&#x27; * 4)</span><br><span class="line">df[&#x27;day&#x27;]=df[&#x27;date&#x27;].apply(lambda x:x[0:11])</span><br><span class="line">df[&#x27;date&#x27;]=pd.to_datetime(df[&#x27;date&#x27;])</span><br><span class="line">df[&#x27;hourr&#x27;]=df[&#x27;date&#x27;].dt.hour</span><br><span class="line">print(df.head())</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/09/18/001/005.png" alt="导入数据的前五行"></p>
+<p><img src="/2021/09/18/011/005.png" alt="导入数据的前五行"></p>
 <p><strong>设置中文字体</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.rcParams[&#x27;font.sans-serif&#x27;]=[&#x27;simhei&#x27;]</span><br></pre></td></tr></table></figure>
 
@@ -223,28 +223,28 @@
 <p>   该商户每天上午10点是发送高峰期，其次是下午的6点和7点，晚上11点至凌晨8点几乎不发送，避免打扰到用户。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">plt.style.use(&#x27;ggplot&#x27;)</span><br><span class="line">dh=df.groupby([&#x27;hourr&#x27;]).count()</span><br><span class="line">dh.reset_index(inplace=True)</span><br><span class="line">plt.bar(dh[&#x27;hourr&#x27;],dh[&#x27;id&#x27;],edgecolor=&#x27;k&#x27;,linewidth=1,label=&#x27;发送时刻分布&#x27;)</span><br><span class="line">plt.legend()</span><br><span class="line">for a,b in zip(dh[&#x27;hourr&#x27;],dh[&#x27;id&#x27;]):</span><br><span class="line">    plt.text(a,b,b,ha=&#x27;center&#x27;,va=&#x27;bottom&#x27;,rotation=90)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
-<img src="/2021/09/18/001/003.png" class="" title="24小时发送量">
+<img src="/2021/09/18/011/003.png" class="" title="24小时发送量">
 
 
 <p><strong>8月每天的发送量</strong></p>
 <p>该商户8月每天的发送量基本在4万条以下，27号发送量激增，考虑是临近月底，政府加大了力度宣传疫苗接种。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">dc=df.groupby([&#x27;day&#x27;]).count()</span><br><span class="line">dc.reset_index(inplace=True)</span><br><span class="line">plt.figure(figsize=(14,9))</span><br><span class="line">plt.title(&#x27;8月短信发送量&#x27;,fontsize=18)</span><br><span class="line">plt.plot(dc[&#x27;day&#x27;],dc[&#x27;id&#x27;],color=&#x27;#99ff99&#x27;,label=&#x27;日发送量&#x27;)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.ylabel(&#x27;发送量&#x27;)</span><br><span class="line">plt.xticks(rotation=60)</span><br><span class="line">for a,b in zip(dc[&#x27;day&#x27;],dc[&#x27;id&#x27;]):</span><br><span class="line">    plt.text(a,b,b,ha=&#x27;center&#x27;,va=&#x27;bottom&#x27;,rotation=90)</span><br><span class="line">plt.savefig(&#x27;E:\\day.png&#x27;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
-<img src="/2021/09/18/001/002.png" class="" title="8月发送量">
+<img src="/2021/09/18/011/002.png" class="" title="8月发送量">
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(dc.describe())</span><br></pre></td></tr></table></figure>
 
 <p>可以看到，8月的平均每天发送量是：17751，中位数是：12964，最小发送量是89，最大发送量是：141554；</p>
-<img src="/2021/09/18/001/006.png" class="" title="8月的平均">
+<img src="/2021/09/18/011/006.png" class="" title="8月的平均">
 
 <p><strong>发送量前五的签名</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">dc1=df.groupby([&#x27;id&#x27;]).count().sort_values(&#x27;content&#x27;,ascending=False).head(5)</span><br><span class="line">dc1.reset_index(inplace=True)</span><br><span class="line">colors = [&#x27;#ff9999&#x27;,&#x27;#66b3ff&#x27;,&#x27;#99ff99&#x27;,&#x27;#ffcc99&#x27;,&#x27;#55B4B0&#x27;]</span><br><span class="line">plt.title(&#x27;发送量前五的签名&#x27;)</span><br><span class="line">plt.pie(dc1[&#x27;content&#x27;], colors = colors, labels=dc1[&#x27;id&#x27;],autopct=&quot;%0.2f%%&quot;,startangle=30)</span><br><span class="line">centre_circle = plt.Circle((0,0),0.80,fc=&#x27;white&#x27;)</span><br><span class="line">fig = plt.gcf()</span><br><span class="line">fig.gca().add_artist(centre_circle)</span><br><span class="line">plt.savefig(&#x27;E:\\id.png&#x27;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
-<img src="/2021/09/18/001/001.png" class="" title="发送量前五的签名">
+<img src="/2021/09/18/011/001.png" class="" title="发送量前五的签名">
 
 <h4 id="短信内容词云展示"><a href="#短信内容词云展示" class="headerlink" title="短信内容词云展示"></a>短信内容词云展示</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">wordlist=df[&#x27;content&#x27;].tolist()</span><br><span class="line">def gg(ml):</span><br><span class="line">    li=[&#x27;&#x27;.join(jieba.cut(sentence))for sentence in ml]</span><br><span class="line">    new_text=&#x27;&#x27;.join(li)</span><br><span class="line">    w=WordCloud(background_color=&#x27;white&#x27;,font_path=r&#x27;C:\Windows\Fonts\simsun.ttc&#x27;).generate(new_text)</span><br><span class="line">    plt.imshow(w)</span><br><span class="line">    plt.axis(&#x27;off&#x27;)</span><br><span class="line">    plt.show()</span><br><span class="line">gg(wordlist)</span><br></pre></td></tr></table></figure>
 
-<img src="/2021/09/18/001/004.png" class="" title="短信内容词云展示">
+<img src="/2021/09/18/011/004.png" class="" title="短信内容词云展示">
 
 <h4 id="存储数据"><a href="#存储数据" class="headerlink" title="存储数据"></a>存储数据</h4><p><strong>将该商户8月的数据存储到mysql</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">import pymysql</span><br><span class="line">df=pd.read_csv(&#x27;E:\\lgww.csv&#x27;,sep=&#x27;|&#x27;,header=None)</span><br><span class="line">row_num=df.shape[0]</span><br><span class="line">con=pymysql.connect(host=&#x27;localhost&#x27;,user=&#x27;root&#x27;,password=&#x27;******&#x27;,charset=&#x27;utf8&#x27;,port=3306)</span><br><span class="line">cursor=con.cursor()</span><br><span class="line">try:</span><br><span class="line">    cursor.execute(&#x27;use lj;&#x27;)</span><br><span class="line">    cursor.execute(&#x27;drop table if exists hdb;&#x27;)</span><br><span class="line">    sql1 = &quot;create table hdb(phonenum char(11),date datetime,msgid varchar(20),content varchar(200));&quot;</span><br><span class="line">    cursor.execute(sql1)</span><br><span class="line">    for i in range(row_num):</span><br><span class="line">        sql=&#x27;insert into hdb(phonenum,date,msgid,content)values (%s,%s,%s,%s)&#x27;</span><br><span class="line">        cursor.execute(sql,(df.iloc[i,:][0],df.iloc[i,:][1],df.iloc[i,:][2],df.iloc[i,:][3]))</span><br><span class="line">        con.commit()</span><br><span class="line">finally:</span><br><span class="line">    con.close()</span><br></pre></td></tr></table></figure>
@@ -268,7 +268,7 @@
       <i class="fa fa-chevron-left"></i> 倒推美团外卖“发放优惠券“”的产品需求文档
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/09/22/002/" rel="next" title="用python对某网购平台的销售数据进行分析">
+    <a href="/2021/09/22/012/" rel="next" title="用python对某网购平台的销售数据进行分析">
       用python对某网购平台的销售数据进行分析 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
