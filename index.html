@@ -176,7 +176,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-25 21:10:46" itemprop="dateModified" datetime="2021-09-25T21:10:46+08:00">2021-09-25</time>
+                <time title="修改时间：2021-09-28 21:21:26" itemprop="dateModified" datetime="2021-09-28T21:21:26+08:00">2021-09-28</time>
               </span>
 
           
@@ -191,7 +191,7 @@
 
       
           <p>数据来源于kaggle，该数据覆盖了某网购平台4年（2015-1-2至2018-12-30）的部分零售数据，对该数据集建立RFM模型，对客户进行细化分类，因为时间比较久远，设置了2019年1月1日作为日期对照值。R(Rencency):最近一次消费，F（Frequency）：消费频率，M（Monetary）：消费金额。</p>
-<h5 id="导入相关库，设置绘图的中文字体"><a href="#导入相关库，设置绘图的中文字体" class="headerlink" title="导入相关库，设置绘图的中文字体"></a>导入相关库，设置绘图的中文字体</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import datetime</span><br><span class="line">import numpy as np</span><br><span class="line">from matplotlib import pyplot as plt</span><br><span class="line">from pyecharts.charts import Map</span><br><span class="line">from matplotlib import pyplot as plt</span><br><span class="line">from pyecharts import options as opts</span><br><span class="line">from pyecharts.globals import ThemeType</span><br><span class="line">plt.rcParams[&#x27;font.sans-serif&#x27;]=[&#x27;SimHei&#x27;]</span><br></pre></td></tr></table></figure>
+<h5 id="导入相关库，设置绘图的中文字体"><a href="#导入相关库，设置绘图的中文字体" class="headerlink" title="导入相关库，设置绘图的中文字体"></a>导入相关库，设置绘图的中文字体</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import datetime</span><br><span class="line">import numpy as np</span><br><span class="line">import pandas as pd</span><br><span class="line">from matplotlib import pyplot as plt</span><br><span class="line">from pyecharts.charts import Map</span><br><span class="line">from matplotlib import pyplot as plt</span><br><span class="line">from pyecharts import options as opts</span><br><span class="line">from pyecharts.globals import ThemeType</span><br><span class="line">plt.rcParams[&#x27;font.sans-serif&#x27;]=[&#x27;SimHei&#x27;]</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/09/22/002/#more" rel="contents">
@@ -291,6 +291,88 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2018/08/13/003/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jenny.Li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jenny.Li">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/13/003/" class="post-title-link" itemprop="url">倒推美团外卖“发放优惠券“”的产品需求文档</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-08-13 20:15:22" itemprop="dateCreated datePublished" datetime="2018-08-13T20:15:22+08:00">2018-08-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-28 21:25:48" itemprop="dateModified" datetime="2021-09-28T21:25:48+08:00">2021-09-28</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>假设你是某餐饮类app的产品经理，由于公司推广需求，现在需要设计一个针对新老用户发送优惠券的H5界面，用于微信里用户自发的分享传播。</p>
+<h3 id="一、产品介绍"><a href="#一、产品介绍" class="headerlink" title="一、产品介绍"></a>一、产品介绍</h3><p>1.1 文档属性</p>
+<p>​    </p>
+<ul>
+<li>文档名称：美团外卖下单后H5优惠券需求文档</li>
+<li>版本： V 3.1.2</li>
+<li>撰写人： Jenny</li>
+<li>撰写时间：2018/8/13</li>
+<li>预计上线时间：2018….</li>
+<li>目的：本次改版主要是添加“下单完成后环节”发放优惠券功能：设计一个针对新老用户发送优惠券的H5界面，用于微信里用户自发的分享传播。</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/08/13/003/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
 
@@ -357,7 +439,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

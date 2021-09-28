@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="假设你是某餐饮类app的产品经理，由于公司推广需求，现在需要设计一个针对新老用户发送优惠券的H5界面，用于微信里用户自发的分享传播。 一、产品介绍1.1 文档属性 ​      文档名称：美团外卖下单后H5优惠券需求文档 版本： V 3.1.2 撰写人： Jenny 撰写时间：2018&#x2F;8&#x2F;13 预计上线时间：2018…. 目的：本次改版主要是添加“下单完成后环节”发放优惠券功能：设计一个针对新老">
+<meta property="og:type" content="article">
+<meta property="og:title" content="倒推美团外卖“发放优惠券“”的产品需求文档">
+<meta property="og:url" content="http://example.com/2018/08/13/003/index.html">
+<meta property="og:site_name" content="Jenny.Li">
+<meta property="og:description" content="假设你是某餐饮类app的产品经理，由于公司推广需求，现在需要设计一个针对新老用户发送优惠券的H5界面，用于微信里用户自发的分享传播。 一、产品介绍1.1 文档属性 ​      文档名称：美团外卖下单后H5优惠券需求文档 版本： V 3.1.2 撰写人： Jenny 撰写时间：2018&#x2F;8&#x2F;13 预计上线时间：2018…. 目的：本次改版主要是添加“下单完成后环节”发放优惠券功能：设计一个针对新老">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2018/08/13/003/001.png">
+<meta property="og:image" content="http://example.com/2018/08/13/003/002.png">
+<meta property="og:image" content="http://example.com/2018/08/13/003/003.png">
+<meta property="og:image" content="http://example.com/2018/08/13/003/004.png">
+<meta property="og:image" content="http://example.com/2018/08/13/003/005.png">
+<meta property="og:image" content="http://example.com/2018/08/13/003/006.png">
+<meta property="og:image" content="http://example.com/2018/08/13/003/007.png">
+<meta property="og:image" content="http://example.com/2018/08/13/003/008.png">
+<meta property="og:image" content="http://example.com/2018/08/13/003/009.png">
+<meta property="og:image" content="http://example.com/2018/08/13/003/010.png">
+<meta property="og:image" content="http://example.com/011.png">
+<meta property="article:published_time" content="2018-08-13T12:15:22.000Z">
+<meta property="article:modified_time" content="2021-09-28T13:25:48.363Z">
+<meta property="article:author" content="Jenny.Li">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2018/08/13/003/001.png">
+
+<link rel="canonical" href="http://example.com/2018/08/13/003/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>倒推美团外卖“发放优惠券“”的产品需求文档 | Jenny.Li</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Jenny.Li</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2018/08/13/003/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jenny.Li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jenny.Li">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          倒推美团外卖“发放优惠券“”的产品需求文档
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-08-13 20:15:22" itemprop="dateCreated datePublished" datetime="2018-08-13T20:15:22+08:00">2018-08-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-28 21:25:48" itemprop="dateModified" datetime="2021-09-28T21:25:48+08:00">2021-09-28</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>假设你是某餐饮类app的产品经理，由于公司推广需求，现在需要设计一个针对新老用户发送优惠券的H5界面，用于微信里用户自发的分享传播。</p>
+<h3 id="一、产品介绍"><a href="#一、产品介绍" class="headerlink" title="一、产品介绍"></a>一、产品介绍</h3><p>1.1 文档属性</p>
+<p>​    </p>
+<ul>
+<li>文档名称：美团外卖下单后H5优惠券需求文档</li>
+<li>版本： V 3.1.2</li>
+<li>撰写人： Jenny</li>
+<li>撰写时间：2018/8/13</li>
+<li>预计上线时间：2018….</li>
+<li>目的：本次改版主要是添加“下单完成后环节”发放优惠券功能：设计一个针对新老用户发送优惠券的H5界面，用于微信里用户自发的分享传播。</li>
+</ul>
+<span id="more"></span>
+
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>1.2 行业背景</p>
+<p>据2018年艾瑞咨询《中国新餐饮消费方式研究报告》显示：</p>
+<p>2017年全国餐饮收入达4.0万亿，同比增长10.7%。今年1月份至4月份，全国餐饮营业额达12736亿元，同比增长10.1%，持续保持了2位数增长。</p>
+<p>随着移动互联网对于居民生活的渗透不断深入，以及80、90后等网生代消费者成为餐饮消费的主力军。当前市场对手机线上点餐、等位和支付等需求出现持续增长，同时对餐饮消费便利性、个性化和品牌化的需求也在与日俱增，这使得餐厅在功能与服务的线上化，用户消费体验持续提升以及全链路线上线下一体化等维度的竞争，将成为国内餐饮行业进一步转型升级的主阵地。</p>
+<p>1.3 产品定位</p>
+<p>美团外卖以互联网为媒介，连接用户与线下餐饮企业，借助互联网信息平台，以外卖资源整合为核心，以用户需求为导向，为用户提供丰富的外卖信息以及便捷的外卖服务，使用户可以足不出户进行线上订餐，享受外卖服务；同时为餐饮企业提供了一个新的销售和营销渠道。’</p>
+<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h3 id="二、需求分析"><a href="#二、需求分析" class="headerlink" title="二、需求分析"></a>二、需求分析</h3><p>2.1 用户场景需求分析：</p>
+<p>生活节奏加快，智能手机的普遍使用，年轻人越来越宅等，拉动了餐饮外卖需求增长，按用餐地点分为以下几类：</p>
+<p><img src="/2018/08/13/003/001.png" alt="001"></p>
+<p>2.2 需求背景：</p>
+<p>外卖竞争越来越激烈，用户点餐时，尤其是找不到人拼单分摊配送费的情况下，单人点餐费用一般在15-20元之间，包装费3.5，配送费4.5，包装费加上配送费在8元，接近餐饮费用的一半了，增加了用户点餐成本，用户会因为这个费用问题而放弃点餐，转而吃零食或者外出吃饭。需要思考如何增加用户使用美团点外卖的频率，在增加老用户粘性的同时实现拉新，也增加品牌的曝光度。</p>
+<p>2.3 需求目的：</p>
+<p>优惠券作为一种常见的促销手段，其本质是经济学中的价格歧视：形式上给予消费者心理一定的折扣，然后促成订单。商家向不同的消费者提供相同的商品或相同质量的服务，但是在消费者之间实行不同的销售价格。针对新老用户发送优惠券，发放形式是用户点餐付款成功后赠送，优惠券可以分享给微信好友，朋友圈，来达到用户的拉新，留存，促活等目的。</p>
+<p>2.4 功能列表：</p>
+<p><img src="/2018/08/13/003/002.png" alt="002"></p>
+<p>2.5  分享到微信的H5界面中的优惠券类型：</p>
+<p><img src="/2018/08/13/003/003.png" alt="003"></p>
+<h3 id="三、用户分享、领取优惠券的相关逻辑、流程图："><a href="#三、用户分享、领取优惠券的相关逻辑、流程图：" class="headerlink" title="三、用户分享、领取优惠券的相关逻辑、流程图："></a>三、用户分享、领取优惠券的相关逻辑、流程图：</h3><p>3.1 业务逻辑</p>
+<p><img src="/2018/08/13/003/004.png" alt="004"></p>
+<p>3.2 业务流程 </p>
+<p><img src="/2018/08/13/003/005.png" alt="005"></p>
+<p>3.3 页面流程</p>
+<p><img src="/2018/08/13/003/006.png" alt="006"></p>
+<p>四、原型设计（功能详细介绍）</p>
+<p>美团下单成功后前端页面：</p>
+<p><img src="/2018/08/13/003/007.png" alt="007"></p>
+<p>微信端页面：</p>
+<p><img src="/2018/08/13/003/008.png" alt="008"></p>
+<p><img src="/2018/08/13/003/009.png" alt="009"></p>
+<p>邀请好友再得10元跳转到网页登录：</p>
+<p><img src="/2018/08/13/003/010.png" alt="010"></p>
+<p>用户无网络点击链接时：</p>
+<p><img src="/011.png" alt="011"></p>
+<p>五、考核指标和计算方法</p>
+<p>   考核指标和计算方法如下：</p>
+<p>一方面是考核的优惠券漏斗转化指标：</p>
+<p>1、成功分享优惠券率 = 成功分享到微信的数量 / 总下单完成的数量</p>
+<p>2、成功领取优惠券率 = 成功领取优惠券的数量 / H5被打开的次数</p>
+<p>3、优惠券使用率 = 使用优惠券的数量 / 总共被用户所领取的优惠券数量</p>
+<p>另一方面是考核「美团外卖」App日常指标的变动：</p>
+<p>1、新增用户数量；</p>
+<p>2、日活跃用户数量DAU；</p>
+<p>3、订单量和交易总价值GMV。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/09/18/001/" rel="next" title="某商户8月短信发送情况分析">
+      某商户8月短信发送情况分析 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">一、产品介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-1"><span class="nav-number">3.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="nav-number">4.</span> <span class="nav-text">二、需求分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E7%94%A8%E6%88%B7%E5%88%86%E4%BA%AB%E3%80%81%E9%A2%86%E5%8F%96%E4%BC%98%E6%83%A0%E5%88%B8%E7%9A%84%E7%9B%B8%E5%85%B3%E9%80%BB%E8%BE%91%E3%80%81%E6%B5%81%E7%A8%8B%E5%9B%BE%EF%BC%9A"><span class="nav-number">5.</span> <span class="nav-text">三、用户分享、领取优惠券的相关逻辑、流程图：</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Jenny.Li</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jenny.Li</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
